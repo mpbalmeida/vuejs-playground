@@ -9,19 +9,21 @@
         <p>{{ mensagem }}</p>
         
         <a v-bind:href="docs">VueJS</a>
-        <p>Aluno: <span v-text="nomeByMetodo()"></span></p>
+        <p>Aluno: <span v-once v-text="name"></span></p>
+        <p>Aluno completo: <span v-text="getName()"></span></p>
     </div>
     <script type="text/javascript">
         new Vue({
             el: '#app',
             data: {
                 mensagem: 'Hey VueJS',
-                nome: "Marcos",
+                name: "Marcos",
                 docs: "https://vuejs.org"
             },
             methods: {
-                nomeByMetodo: function(event) {
-                    return this.nome;
+                getName: function(event) {
+                    this.name = "Marcos Almeida";
+                    return this.name;
                 }
             },
             
