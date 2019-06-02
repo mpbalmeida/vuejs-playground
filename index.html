@@ -8,16 +8,23 @@
     <div id="app">
         <button v-on:click="increment">Clique</button>
         <p>Button was clicked {{ clickCount }} times</p>
+        <p v-on:mousemove="updateCoordinates">Mouse coordinates x: {{ x }} y: {{ y }}</p>
     </div>
     <script type="text/javascript">
         new Vue({
             el: '#app',
             data: {
-                clickCount: 0
+                clickCount: 0,
+                x: 0,
+                y: 0
             },
             methods: {
                 increment: function() {
                     this.clickCount++;
+                },
+                updateCoordinates: function(event) {
+                    this.x = event.clientX;
+                    this.y = event.clientY;
                 }
             }
             
