@@ -10,7 +10,7 @@
         
         <a v-bind:href="docs">VueJS</a>
         <p>Aluno: <span v-once v-text="name"></span></p>
-        <p>Aluno completo: <span v-text="getName()"></span></p>
+        <p v-html="getName()"></p>
     </div>
     <script type="text/javascript">
         new Vue({
@@ -22,7 +22,7 @@
             },
             methods: {
                 getName: function(event) {
-                    this.name = "Marcos Almeida";
+                    this.name = "Aluno completo: <span style='color: red;'>Marcos Almeida</span>";
                     return this.name;
                 }
             },
