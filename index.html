@@ -6,26 +6,20 @@
 </head>
 <body>
     <div id="app">
-        <p>{{ mensagem }}</p>
-        
-        <a v-bind:href="docs">VueJS</a>
-        <p>Aluno: <span v-once v-text="name"></span></p>
-        <p v-html="getName()"></p>
+        <button v-on:click="increment">Clique</button>
+        <p>Button was clicked {{ clickCount }} times</p>
     </div>
     <script type="text/javascript">
         new Vue({
             el: '#app',
             data: {
-                mensagem: 'Hey VueJS',
-                name: "Marcos",
-                docs: "https://vuejs.org"
+                clickCount: 0
             },
             methods: {
-                getName: function(event) {
-                    this.name = "Aluno completo: <span style='color: red;'>Marcos Almeida</span>";
-                    return this.name;
+                increment: function() {
+                    this.clickCount++;
                 }
-            },
+            }
             
         });
     </script>
