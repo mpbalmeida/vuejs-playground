@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>VueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{ mensagem }}</p>
+        
+        <a v-bind:href="docs">VueJS</a>
+        <p>Aluno: <span v-text="nomeByMetodo()"></span></p>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data: {
+                mensagem: 'Hey VueJS',
+                nome: "Marcos",
+                docs: "https://vuejs.org"
+            },
+            methods: {
+                nomeByMetodo: function(event) {
+                    return this.nome;
+                }
+            },
+            
+        });
+    </script>
+</body>
+</html>
